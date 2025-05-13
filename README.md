@@ -17,34 +17,34 @@ The directory **ML** contains the database of structures generated to train the 
 
 - **big-data-full**:
 
-  - **scripts/mix_SSDBs.py**: This is a script that creates mixed databases (see on **03/08/2019-(1)**) reading from the per-bond single-SOAP databases (PBSSDBs; see on **07/07/2019-(3)**). An example of outputs generated can be found in the subdirectory **DB1**.
-
-  - **scripts/PBSSDB-kernel_fit.py**: This script fits a per-bond (PB) single-SOAP (SS) kernel for -ICOHP values. It reads the files **.bnd** and **.vec** from the per-bond single-SOAP databases (PBSSDBs; see on **07/07/2019-(3)**) and writes the target vs. predicted -ICOHP values (with RMSE information), like those depicted in **Fig. 2** (see on **02/08/2019-(4)**). The set of RMSE values for different runs of this script with same ML model parameters were used to plot the convergence tests in **Fig. 1**.
-
   - **scripts/check_QE_ICOHP.py**: The electronic structure calculation and post-processing for computing the -ICOHP values may not converge or get finished successfully. This script checks which steps and sub-steps of a given run have been finished according to the following directory structure (see on **05/10/2018-(10)**):
     - **<CHEM_COMPOSITION>/c/md/lammps/100/<ID_RUN>/\<STEP>/<SUB_STEP>**.
 
-  - **scripts/avgsoaps.py**: Just some tests with the class **SOAPList** defined in the file **atom/desc/soap/soaplist.py** (see on **19/12/2018-(2)**).
-
   - **scripts/setup_ICOHP_jobs.py**: This script will setup the Slurm job files to run in parallel 15 ICOHP calculations, 15 for each **<ID_RUN>**. Recalling that only the last **<STEP>** will be considered, for which 14 **<SUB_STEP>** will  be derived to generated the distorted structures following the following directory structure (see on **05/10/2018-(10)**). For instance, the directory **./big-data-full/Zr49Cu49Al2/c/md/lammps/100/42** contains a MD simulation for a **random** distribution of 100 atoms (**<ID_RUN>** is 42). In that MD simulation that initial structure was thermalized (thermal equilibrium) at 2000 K for a while (see more on **03/11/2016-(10)**) and then quenched to 300 K and thermalized. That final structure (the last MD **\<STEP>** labeled as 2000) was taken to generate the 15 structures (**<SUB_STEP>** from 0 to 14) for which the simulations with Lobster will run. **NOTE**: the work done by this script can be done by some **GenAI**.
 
-  - **scripts/compare_clusters_soap.py**: This is script was never mentioned in any diary. It basically compares two clusters (central atoms plus first coordination shells) in their individual **.xyz** files.
+  - **scripts/create_SSDB.py**: This is script was never mentioned in any diary. It creates a single-SOAP (SS) database for all **<ID_RUN>s** in a given nominal composition (see on **05/10/2018-(10)**).
 
-  - **scripts/PCSSDB-kernel_fit.py**: This is script was never mentioned in any diary. Basically it fits a per-cluster (central atoms plus first coordination shells) GPR kernel for sum(-ICOHP). Based on diary of **03/07/2019**, it was before Prof. Gábor suggested the **bond feature vector**. **NOTE**: the per-cluster databases are in the **-PCDB** directories whilst the per-bond ones will be saved in the **-PBDB** directories.
+  - **scripts/create_PBMSDB.py**: This script creates a per-bond (PB) multiple-SOAP (MS) database for all **<ID_RUN>s** in a given nominal composition. The code follows the directory structure below (see on **05/10/2018-(10)**), with **<SUB_STEP>s** ranging from 0 to 14:
+    - **<CHEM_COMPOSITION>/c/md/lammps/100/<ID_RUN>/2000/<SUB_STEP>**.
+    - NOTE: As per **07/07/2019-(3)**, the structure of the files in the per-bond single-SOAP database (PBSSDB) and in the new per-bond multiple-SOAP database (PBMSDB) will be the same. The only difference is that the former will use the file **SOAPS.vec** of each **<SUB_STEP>** whereas the latter will use the individual ones **SOAPS-Zr.vec**, **SOAPS-Cu.vec**, and **SOAPS-Al.vec**.
 
-  - **scripts/create_SSDB.py**:
-
-  - **scripts/create_PBMSDB.py**:
+  - **scripts/avgsoaps.py**: Just some tests with the class **SOAPList** defined in the file **atom/desc/soap/soaplist.py** (see on **19/12/2018-(2)**).
 
   - **scripts/check_ICOHPLIST.py**: This script checks for a given run, step, and sub-step if all the interactions in the reference **lobsterin-quippy** file exist in the respective **ICOHPLIST.lobster** (see on **17/06/2019-(5)**). It uses the corresponding **.xyz** file to write individual **.xyz** files for each cluster (central atom plus first coordination shell).
 
-  - **scripts/compare_global_soaps.py**:
+  - **scripts/mix_SSDBs.py**: This is a script that creates mixed databases (see on **03/08/2019-(1)**) reading from the per-bond single-SOAP databases (PBSSDBs; see on **07/07/2019-(3)**). An example of outputs generated can be found in the subdirectory **DB1**.
 
-  - **scripts/compare.py**:
+  - **scripts/compare_clusters_soap.py**: This is script was never mentioned in any diary. It basically compares two clusters (central atoms plus first coordination shells) in their individual **.xyz** files.
+
+  - **scripts/compare_global_soaps.py**: This is script is mentioned in diary of **05/11/2018**. It basically compares two structures using **QUIP** directly instead of **theo4m**.
+
+  - **scripts/compare.py**: This is script was never mentioned in any diary. Basically in its current state, it compares individual SOAPs like a file **SOAPS-Al.vec**.
+
+  - **scripts/PBSSDB-kernel_fit.py**: This script fits a per-bond (PB) single-SOAP (SS) kernel for -ICOHP values. It reads the files **.bnd** and **.vec** from the per-bond single-SOAP databases (PBSSDBs; see on **07/07/2019-(3)**) and writes the target vs. predicted -ICOHP values (with RMSE information), like those depicted in **Fig. 2** (see on **02/08/2019-(4)**). The set of RMSE values for different runs of this script with same ML model parameters were used to plot the convergence tests in **Fig. 1**.
+
+  - **scripts/PCSSDB-kernel_fit.py**: This is script was never mentioned in any diary. Basically it fits a per-cluster (central atoms plus first coordination shells) GPR kernel for sum(-ICOHP). Based on diary of **03/07/2019**, it was before Prof. Gábor suggested the **bond feature vector**. **NOTE**: the per-cluster databases are in the **-PCDB** directories whilst the per-bond ones will be saved in the **-PBDB** directories.
 
 The directory **SS-ML** contains the simulations of the stress-strain curves depicted in **Fig. 4**, in which I applied the GPR ML model to 10k atoms cells. It contains a subdirectory **scripts** with:
-
-- **3DI_ICOHP.py**: This is a script that simply interpolates the ICOHP values localized between two atoms using true values computed with LOBSTER for the 100-atoms cells. Mentioned so many times in the diary of **Feb-2020**.
 
 - **fcsci.py**: This is a script that reads a step from a LAMMPS .dump file to compute their FCSI indexes (see on **19/09/2019**).
 
@@ -61,3 +61,5 @@ The directory **SS-ML** contains the simulations of the stress-strain curves dep
 - **plot_2D-bin.py**: This is script was never mentioned in any diary.
 
 - **prepare_R_data_frame.py**: This is a script that reads a \<STEP>_<TRUE_STEP>_ICOHP.lobster file generated with the script ML-ICOHP.py and creates a per-interaction "data frame" as described on **07/08/2019-(5)**. See also **27/09/2019-(6)**.
+
+- **3DI_ICOHP.py**: This is a script that simply interpolates the ICOHP values localized between two atoms using true values computed with LOBSTER for the 100-atoms cells. Mentioned so many times in the diary of **Feb-2020**.
