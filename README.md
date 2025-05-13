@@ -22,6 +22,12 @@ The directory **ML** contains the database of structures generated to train the 
   - **scripts/check_QE_ICOHP.py**: The electronic structure calculation and post-processing for computing the -ICOHP values may not converge or get finished successfully. This script checks which steps and sub-steps of a given run have been finished according to the following directory structure (see on **05/10/2018-(10)**):
     - **<CHEM_COMPOSITION>/c/md/lammps/100/<ID_RUN>/\<STEP>/<SUB_STEP>**.
 
+  - **scripts/compare_clusters_soap.py**: This is script was never mentioned in any diary. It basically compares two clusters (central atoms plus first coordination shells) in their individual **.xyz** files.
+
+  - **scripts/compare_global_soaps.py**: This is script is mentioned in diary of **05/11/2018**. It basically compares two structures using **QUIP** directly instead of **theo4m**.
+
+  - **scripts/compare.py**: This is script was never mentioned in any diary. Basically in its current state, it compares individual SOAPs like a file **SOAPS-Al.vec**.
+
   - **scripts/create_SSDB.py**: This is script was never mentioned in any diary. It creates a single-SOAP (SS) database for all **<ID_RUN>s** in a given nominal composition (see on **05/10/2018-(10)**).
 
   - **scripts/create_PBMSDB.py**: This script creates a per-bond (PB) multiple-SOAP (MS) database for all **<ID_RUN>s** in a given nominal composition. The code follows the directory structure below (see on **05/10/2018-(10)**), with **<SUB_STEP>s** ranging from 0 to 14:
@@ -33,12 +39,6 @@ The directory **ML** contains the database of structures generated to train the 
   - **scripts/check_ICOHPLIST.py**: This script checks for a given run, step, and sub-step if all the interactions in the reference **lobsterin-quippy** file exist in the respective **ICOHPLIST.lobster** (see on **17/06/2019-(5)**). It uses the corresponding **.xyz** file to write individual **.xyz** files for each cluster (central atom plus first coordination shell).
 
   - **scripts/mix_SSDBs.py**: This is a script that creates mixed databases (see on **03/08/2019-(1)**) reading from the per-bond single-SOAP databases (PBSSDBs; see on **07/07/2019-(3)**). An example of outputs generated can be found in the subdirectory **DB1**.
-
-  - **scripts/compare_clusters_soap.py**: This is script was never mentioned in any diary. It basically compares two clusters (central atoms plus first coordination shells) in their individual **.xyz** files.
-
-  - **scripts/compare_global_soaps.py**: This is script is mentioned in diary of **05/11/2018**. It basically compares two structures using **QUIP** directly instead of **theo4m**.
-
-  - **scripts/compare.py**: This is script was never mentioned in any diary. Basically in its current state, it compares individual SOAPs like a file **SOAPS-Al.vec**.
 
   - **scripts/PBSSDB-kernel_fit.py**: This script fits a per-bond (PB) single-SOAP (SS) kernel for -ICOHP values. It reads the files **.bnd** and **.vec** from the per-bond single-SOAP databases (PBSSDBs; see on **07/07/2019-(3)**) and writes the target vs. predicted -ICOHP values (with RMSE information), like those depicted in **Fig. 2** (see on **02/08/2019-(4)**). The set of RMSE values for different runs of this script with same ML model parameters were used to plot the convergence tests in **Fig. 1**.
 
