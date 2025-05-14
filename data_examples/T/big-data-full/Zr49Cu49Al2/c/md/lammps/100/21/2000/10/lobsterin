@@ -1,0 +1,10 @@
+skipDOS
+skipCOOP
+skipPopulationAnalysis
+COHPstartEnergy -100.0
+COHPendEnergy 40.0
+basisSet Bunge
+basisfunctions Al 3s 3p
+basisfunctions Cu 3s 4s 3p 3d
+basisfunctions Zr 4s 5s 4p 4d
+cohpGenerator from 1.80 to 4.20

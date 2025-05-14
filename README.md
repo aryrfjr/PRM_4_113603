@@ -1,5 +1,10 @@
 # PRM_4_113603
-Scripts used in Phys. Rev. Materials 4, 113603 (DOI: https://doi.org/10.1103/PhysRevMaterials.4.113603)
+
+Below is an illustration of the MLOps workflow in terms of a Generate+ETL pipeline used in Phys. Rev. Materials 4, 113603 (DOI: https://doi.org/10.1103/PhysRevMaterials.4.113603):
+
+![MLOPs workflow used in PRM_4_113603](img/PRM_4_113603_MLOps.drawio.png)
+
+Next, a description of the scripts used in that work for a high technical level operation with a manual Python/Shell-based GETL+MLOps pipeline:
 
 The directory **ML** contains the database of structures generated to train the ML model. It contains the following subdirectories with scripts:
 
@@ -17,7 +22,7 @@ The directory **ML** contains the database of structures generated to train the 
 
 - **big-data-full**:
 
-  - **scripts/setup_ICOHP_jobs.py**: This script will setup the Slurm job files to run in parallel 15 ICOHP calculations, 15 for each **<ID_RUN>**. Recalling that only the last **<STEP>** will be considered, for which 14 **<SUB_STEP>** will  be derived to generated the distorted structures following the following directory structure (see on **05/10/2018-(10)**). For instance, the directory **./big-data-full/Zr49Cu49Al2/c/md/lammps/100/42** contains a MD simulation for a **random** distribution of 100 atoms (**<ID_RUN>** is 42). In that MD simulation that initial structure was thermalized (thermal equilibrium) at 2000 K for a while (see more on **03/11/2016-(10)**) and then quenched to 300 K and thermalized. That final structure (the last MD **\<STEP>** labeled as 2000) was taken to generate the 15 structures (**<SUB_STEP>** from 0 to 14) for which the simulations with Lobster will run. **NOTE**: the work done by this script can be done by some **GenAI**.
+  - **scripts/setup_ICOHP_jobs.py**: This script will setup the Slurm job files to run in parallel 15 ICOHP calculations, 15 for each **<ID_RUN>**. Recalling that only the last **<STEP>** will be considered, from which 14 **<SUB_STEP>** will  be derived to generate the corresponding distorted structures (see on **05/10/2018-(10)**). For instance, the directory **./big-data-full/Zr49Cu49Al2/c/md/lammps/100/42** contains a MD simulation for a **random** distribution of 100 atoms (**<ID_RUN>** is 42). In that MD simulation that initial structure was thermalized (thermal equilibrium) at 2000 K for a while (see more on **03/11/2016-(10)**) and then quenched to 300 K and thermalized. That final structure (the last MD **\<STEP>** labeled as 2000) was taken to generate the 15 structures (**<SUB_STEP>** from 0 to 14) for which the simulations with Lobster will run. **NOTE**: the work done by this script can be done by some **GenAI**.
 
   - **scripts/check_QE_ICOHP.py**: The electronic structure calculation and post-processing for computing the -ICOHP values may not converge or get finished successfully. This script checks which steps and sub-steps of a given run have been finished according to the following directory structure (see on **05/10/2018-(10)**):
     - **<CHEM_COMPOSITION>/c/md/lammps/100/<ID_RUN>/\<STEP>/<SUB_STEP>**.
