@@ -28,6 +28,6 @@ The structures of the two directories **ML** and **SS-ML** are the same as those
 
 - **data_examples**:
 
-- **shell_scripts**: this directory contains all Shell scripts used to execute the Python scripts in the directories above in both local and remote HPC environments.
+- **shell_scripts**: this directory contains all Shell scripts used to execute the Python scripts and third-part software (LAMMPS, Quantum ESPRESSO, LOBSTER, and quippy) in the directories above, in both local and remote HPC environments (represented by the cloud in the figure above).
 
 - **img**: some images for the README files.
