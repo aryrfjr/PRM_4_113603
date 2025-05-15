@@ -4,7 +4,7 @@ Below is an illustration of the MLOps workflow in terms of a Generate+ETL (GETL)
 
 ![MLOPs workflow used in PRM_4_113603](img/PRM_4_113603_MLOps.drawio.png)
 
-Next, a description of the scripts used in the implemented MLOps workflow used in that work. I'm working to make it self-contained. The scripts were used at different stages of the research (tests, development, and application) and are operational at a high technical level execution of the manual Python/Shell-based GETL pipelines depicted in the figure above:
+Next, a description of the scripts used in the implemented MLOps workflow used in that work. I'm working to make it self-contained. The scripts were used at different stages of the research (tests, development, and application) and are operational at a high technical level manual execution of the Python/Shell-based GETL pipelines depicted in the figure above:
 
 The directory **ML** contains the database of structures generated to train the ML model. It contains the following subdirectories with scripts:
 
