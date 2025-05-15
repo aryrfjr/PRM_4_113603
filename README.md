@@ -1,10 +1,10 @@
 # PRM_4_113603
 
-Below is an illustration of the MLOps workflow in terms of a Generate+ETL framework used in Phys. Rev. Materials 4, 113603 (DOI: https://doi.org/10.1103/PhysRevMaterials.4.113603):
+Below is an illustration of the MLOps workflow in terms of a Generate+ETL (GETL) framework used in Phys. Rev. Materials 4, 113603 (DOI: https://doi.org/10.1103/PhysRevMaterials.4.113603):
 
 ![MLOPs workflow used in PRM_4_113603](img/PRM_4_113603_MLOps.drawio.png)
 
-Next, a description of the scripts used in that work for a high technical level operation with a manual Python/Shell-based GETL+MLOps pipeline:
+Next, a description of the scripts used in the implemented MLOps workflow used in that work. I'm working to make it self-contained. The scripts were used at different stages of the research and are operational at a high technical level execution of the manual Python/Shell-based GETL pipelines depicted in the figure above:
 
 The directory **ML** contains the database of structures generated to train the ML model. It contains the following subdirectories with scripts:
 
