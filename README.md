@@ -37,7 +37,7 @@ The directory **ML** contains the database of structures generated to train the 
 
   - **scripts/create_PBMSDB.py**: this script creates a per-bond (PB) multiple-SOAP (MS) database for all **<ID_RUN>s** in a given nominal composition. The code follows the directory structure below (see on **05/10/2018-(10)**), with **<SUB_STEP>s** ranging from 0 to 14:
     - **<CHEM_COMPOSITION>/c/md/lammps/100/<ID_RUN>/2000/<SUB_STEP>**.
-    - NOTE: as per **07/07/2019-(3)**, the structure of the files in the per-bond single-SOAP database (PBSSDB) and in the new per-bond multiple-SOAP database (PBMSDB) will be the same. The only difference is that the former will use the file **SOAPS.vec** of each **<SUB_STEP>** whereas the latter will use the individual ones **SOAPS-Zr.vec**, **SOAPS-Cu.vec**, and **SOAPS-Al.vec**.
+    - **NOTE**: as per **07/07/2019-(3)**, the structure of the files in the per-bond single-SOAP database (PBSSDB) and in the new per-bond multiple-SOAP database (PBMSDB) will be the same. The only difference is that the former will use the file **SOAPS.vec** of each **<SUB_STEP>** whereas the latter will use the individual ones **SOAPS-Zr.vec**, **SOAPS-Cu.vec**, and **SOAPS-Al.vec**.
 
   - **scripts/avgsoaps.py**: just some tests with the class **SOAPList** defined in the file **atom/desc/soap/soaplist.py** (see on **19/12/2018-(2)**).
 
