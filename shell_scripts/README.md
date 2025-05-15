@@ -6,8 +6,18 @@ Below is an illustration of the MLOps workflow in terms of a Generate+ETL (GETL)
 
 Next, a description of the shell scripts that make up the implemented MLOps workflow used in that work. They were used at different stages of the research (tests, development, and application) and are operational at a high technical level manual execution of the Python/Shell-based GETL pipelines depicted in the figure above:
 
-- **zca-bd-full-SD-cpu.sh**: this script creates a LAMMPS input file for a Classical Molecular Dynamics like the [example for the 100-atom cell of Zr₄₉Cu₄₉Al₂](../data_examples/G/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/Zr49Cu49Al2.lmp.inp). It is a job script for the queue **cpu_long** of the supercomputer SDumont. It is used in the **Generate** step of the MLOps workflow depicted in the figure above.
+- **zca-bd-full-SD-cpu.sh**: this script creates a LAMMPS input file for a Classical Molecular Dynamics like the [example for the 100-atom cell of Zr₄₉Cu₄₉Al₂](../data_examples/G/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/Zr49Cu49Al2.lmp.inp). It is a job script for the queue **cpu** of the supercomputer SDumont and is used in the **Generate** step of the MLOps workflow depicted in the figure above.
 
 - **zca-bd-full-SD.sh**: this script performs the same task as **zca-bd-full-SD-cpu.sh**, but in the queue **cpu_long** of the supercomputer SDumont.
 
 - **zca-bd-full.sh**: this script performs the same task as **zca-bd-full-SD-cpu.sh**, but in the supercomputer CENAPAD-SP.
+
+- **zca-QE-SD_cpu.sh**: this script is a job script for the queue **cpu** of the supercomputer SDumont. It is used in the **Generate** step of the MLOps workflow depicted in the figure above and uses a pre-generated input file for the PWscf (Plane-Wave Self-Consistent Field) package (a core component of the Quantum ESPRESSO distribution) for the electronic structure simulation of a 100-atom cell output of the CMD simulation with LAMMPS described above. like the [example for the 100-atom cell of Zr₄₉Cu₄₉Al₂](../data_examples/G/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/2000/0/Zr49Cu49Al2.scf.in).
+  
+- **zca-QE-SD_cpu_long.sh**: this script performs the same task as **zca-QE-SD_cpu.sh**, but in the queue **cpu_long** of the supercomputer SDumont.
+  
+- **zca-QE-SD_cpu_small.sh**: this script performs the same task as **zca-QE-SD_cpu.sh**, but in the queue **cpu_small** of the supercomputer SDumont.
+  
+- **zca-LOB-SD_cpu.sh**: 
+  
+- **zca-LOB-SD_cpu_long.sh**: 
