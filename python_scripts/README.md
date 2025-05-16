@@ -2,7 +2,7 @@
 
 Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GETL) framework used in Phys. Rev. Materials 4, 113603 (DOI: https://doi.org/10.1103/PhysRevMaterials.4.113603):
 
-![MLOPs workflow used in PRM_4_113603](img/PRM_4_113603_MLOps.drawio.png)
+![MLOPs workflow used in PRM_4_113603](../img/PRM_4_113603_MLOps.drawio.png)
 
 The folder structures of the two directories **ML** and **SS-ML** are the same as those used in the original Python/Shell-based GETL pipelines depicted in the figure above. Below a description of all directories in the root of this repository:
 
