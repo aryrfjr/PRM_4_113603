@@ -10,11 +10,11 @@ The directory **SS-ML** contains the simulations of the stress-strain curves dep
 
 - **fcsci.py**: this is a script that reads a step from a LAMMPS **.dump** file to compute their FCSI indexes (see on **19/09/2019**).
 
-- **ML-ICOHP_MPI.py**: this is a script that reads a set of steps from a LAMMPS **.dump** file to compute the ML predicted ICOHP values for all detected bonds. This is script was never mentioned in any diary.
+- **ML-ICOHP_MPI.py**: this is a script that reads a set of steps from a LAMMPS **.dump** file to compute the ML predicted -ICOHP values for all detected bonds. This is script was never mentioned in any diary.
 
-- **ML-ICOHP.py**: this is a script that reads a set of steps from a LAMMPS **.dump** file to compute the ML predicted ICOHP values for all detected bonds. Mentioned so many times in the diary of **Aug-2019** and also on **27/09/2019-(4)** and on **06/02/2020-(3)**.
+- **ML-ICOHP.py**: this is a script that reads a set of steps from a LAMMPS **.dump** file to compute the ML predicted -ICOHP values for all detected bonds. Mentioned so many times in the diary of **Aug-2019** and also on **27/09/2019-(4)** and on **06/02/2020-(3)**.
 
-- **ML-ICOHP_RMSD.py**: this is a script that reads a LAMMPS **.dump** file and writes a corresponding file with ML predicted -ICOHP values for all detected bonds. The user can define which steps will be read as well as the cutoff radius which in principle has to be the same used in the DFT ICOHP simulations. This code also reports the RMSD values for the last step based on its ICOHPLIST.lobster file. See on **08/08/2019-(3)**
+- **ML-ICOHP_RMSD.py**: this is a script that reads a LAMMPS **.dump** file and writes a corresponding file with ML predicted -ICOHP values for all detected bonds. The user can define which steps will be read as well as the cutoff radius which in principle has to be the same used in the DFT COHP simulations. This code also reports the RMSD values for the last step based on its **ICOHPLIST.lobster** file. See on **08/08/2019-(3)**
 
 - **nucleation.py**: see on **09/09/2019-(1)**.
 
