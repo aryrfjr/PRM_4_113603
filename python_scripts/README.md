@@ -4,7 +4,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 ![MLOPs workflow used in PRM_4_113603](../img/PRM_4_113603_MLOps.drawio.png)
 
-The folder structures of the two directories **ML** and **SS-ML** are the same as those used in the original Python/Shell-based GETL pipelines depicted in the figure above. Below a description of all directories in the root of this repository:
+The folder structures of the two directories **ML** and **SS-ML** are the same as those used in the original Python/Shell-based GETL pipelines depicted in the figure above. Below a description of all directories in this folder:
 
 - **ML**: this directory contains all Python scripts that make up the **pre-Deployment** pipeline, which consists of the following steps:
   
