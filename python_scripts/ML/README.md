@@ -27,13 +27,13 @@ The directory **ML** contains the database of structures generated to train the 
   - **scripts/check_QE_ICOHP.py**: the electronic structure calculation and post-processing for computing the -ICOHP values may not converge or get finished successfully. This script checks which steps and sub-steps of a given run have been finished according to the following directory structure (see on **05/10/2018-(10)**):
     - **<CHEM_COMPOSITION>/c/md/lammps/100/<ID_RUN>/\<STEP>/<SUB_STEP>**.
 
-  - **scripts/compare_clusters_soap.py**: this is script was never mentioned in any diary. It basically compares two clusters (central atoms plus first coordination shells) in their individual **.xyz** files.
+  - **scripts/compare_clusters_soap.py**: this script was never mentioned in any diary. It basically compares two clusters (central atoms plus first coordination shells) in their individual **.xyz** files.
 
-  - **scripts/compare_global_soaps.py**: this is script is mentioned in diary of **05/11/2018**. It basically compares two structures using **QUIP** directly instead of **theo4m**.
+  - **scripts/compare_global_soaps.py**: this script is mentioned in diary of **05/11/2018**. It basically compares two structures using **QUIP** directly instead of **theo4m**.
 
-  - **scripts/compare.py**: this is script was never mentioned in any diary. Basically in its current state, it compares individual SOAPs like a file **SOAPS-Al.vec**.
+  - **scripts/compare.py**: this script was never mentioned in any diary. Basically in its current state, it compares individual SOAPs like a file **SOAPS-Al.vec**.
 
-  - **scripts/create_SSDB.py**: this is script was never mentioned in any diary. It creates a single-SOAP (SS) database for all **<ID_RUN>s** in a given nominal composition (see on **05/10/2018-(10)**).
+  - **scripts/create_SSDB.py**: this script was never mentioned in any diary. It creates a single-SOAP (SS) database for all **<ID_RUN>s** in a given nominal composition (see on **05/10/2018-(10)**).
 
   - **scripts/create_PBMSDB.py**: this script creates a per-bond (PB) multiple-SOAP (MS) database for all **<ID_RUN>s** in a given nominal composition. The code follows the directory structure below (see on **05/10/2018-(10)**), with **<SUB_STEP>s** ranging from 0 to 14:
     - **<CHEM_COMPOSITION>/c/md/lammps/100/<ID_RUN>/2000/<SUB_STEP>**.
@@ -47,4 +47,4 @@ The directory **ML** contains the database of structures generated to train the 
 
   - **scripts/PBSSDB-kernel_fit.py**: this script fits a per-bond (PB) single-SOAP (SS) kernel for -ICOHP values. It reads the files **.bnd** and **.vec** from the per-bond single-SOAP databases (PBSSDBs; see on **07/07/2019-(3)**) and writes the target vs. predicted -ICOHP values (with RMSE information), like those depicted in **Fig. 2** (see on **02/08/2019-(4)**). The set of RMSE values for different runs of this script with same ML model parameters were used to plot the convergence tests in **Fig. 1**.
 
-  - **scripts/PCSSDB-kernel_fit.py**: this is script was never mentioned in any diary. Basically it fits a per-cluster (central atoms plus first coordination shells) GPR kernel for sum(-ICOHP). Based on diary of **03/07/2019**, it was before Prof. Gábor suggested the **bond feature vector**. **NOTE**: the per-cluster databases are in the **-PCDB** directories whilst the per-bond ones will be saved in the **-PBDB** directories.
+  - **scripts/PCSSDB-kernel_fit.py**: this script was never mentioned in any diary. Basically it fits a per-cluster (central atoms plus first coordination shells) GPR kernel for sum(-ICOHP). Based on diary of **03/07/2019**, it was before Prof. Gábor suggested the **bond feature vector**. **NOTE**: the per-cluster databases are in the **-PCDB** directories whilst the per-bond ones will be saved in the **-PBDB** directories.
