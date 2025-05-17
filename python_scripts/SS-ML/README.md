@@ -10,7 +10,7 @@ The directory **SS-ML** contains the simulations of the stress-strain curves dep
 
 - **fcsci.py**: this is a script that reads a step from a LAMMPS **.dump** file to compute their FCSI indexes (see on **19/09/2019**).
 
-- **ML-ICOHP_MPI.py**: this is a script that reads a set of steps from a LAMMPS **.dump** file to compute the ML predicted -ICOHP values for all detected bonds. This is script was never mentioned in any diary.
+- **ML-ICOHP_MPI.py**: this is a script that reads a set of steps from a LAMMPS **.dump** file to compute the ML predicted -ICOHP values for all detected bonds. This script was never mentioned in any diary.
 
 - **ML-ICOHP.py**: this is a script that reads a set of steps from a LAMMPS **.dump** file to compute the ML predicted -ICOHP values for all detected bonds. Mentioned so many times in the diary of **Aug-2019** and also on **27/09/2019-(4)** and on **06/02/2020-(3)**.
 
@@ -20,7 +20,7 @@ The directory **SS-ML** contains the simulations of the stress-strain curves dep
 
 - **part-ICOHP.py**: see on **12/08/2019-(9)**. Mentioned so many times in the diary of **Aug-2019**.
 
-- **plot_2D-bin.py**: this is script was never mentioned in any diary.
+- **plot_2D-bin.py**: this script was never mentioned in any diary.
 
 - **prepare_R_data_frame.py**: this is a script that reads a **\<STEP>_<TRUE_STEP>_ICOHP.lobster** file generated with the script **ML-ICOHP.py** and creates a per-interaction "data frame" as described on **07/08/2019-(5)**. See also **27/09/2019-(6)**.
 
