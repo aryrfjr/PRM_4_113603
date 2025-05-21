@@ -20,7 +20,7 @@
 # Libraries
 import os
 import quippy
-# from quippy import Atoms # never used in this script and not found in current quippy
+from quippy import Atoms
 from quippy import descriptors
 import sys
 sys.path.append("/home/aryjr/dev-python")
@@ -218,15 +218,15 @@ def comp_tens_cell(a, b, c, par, value_comp, value_tens):
 #
 
 # Constants
-BD_DIR = "PRM_4_113603_repr/ML/big-data-full/"
-LOCAL_DIR = "/home/aryjr/MLOps/"
+BD_DIR = "MG-NMR/ML/big-data-full/"
+LOCAL_DIR = "/home/aryjr/UFSCar/"
 SD_SCRATCH = "/scratch/rmnvm/ary.junior/"
 REF_SYMBS = ["Zr","Cu","Al"] # the output must be in the order of LAMMPS
 Z_NBFS = [10, 10, 4] # number of basis functions in the .UPF and in lobsterin to compute nbnd
 
 # Input arguments
-nominal_comp = sys.argv[1] # e.g. Zr49Cu49Al2
-id_run = sys.argv[2] # e.g. 21
+nominal_comp = sys.argv[1]
+id_run = sys.argv[2]
 # Loop over the runs
 #
 # The first step is to load the reference 
@@ -241,7 +241,7 @@ id_run = sys.argv[2] # e.g. 21
 id_run_dir = LOCAL_DIR+BD_DIR+nominal_comp+"/c/md/lammps/100/"+id_run
 rsteps, ratoms, rccell = read_lammps(lmpoutput = id_run_dir+"/zca-th300.dump", 
                                  spc_symbs = REF_SYMBS, 
-                                 frac = False, items = [-2])
+                                 frac = True, item = -2)
 atoms = ratoms[0]
 ccell = rccell[0]
 a = ccell[0,0]
@@ -304,7 +304,6 @@ for si in range(6, 8): # <SUB_STEP>: 13 14
     sub_step += 1
 # Next, I can compute the SOAPS of the 15 cells
 # and generate the files for the ICOHP calculations
-# sys.setrecursionlimit(17000) # may be necessary
 for iss in range(15):
     xyz_file = jobdir+"/"+str(iss)+"/"+nominal_comp+".xyz"
     # Firstly the single-SOAPs
@@ -332,3 +331,70 @@ for iss in range(15):
     write_lobsterin(jobdir+"/"+str(iss)+"/lobsterin-quippy", cats, frame)
     # distances based on the g(r) from my Sci. Rep.
     write_lobsterin(jobdir+"/"+str(iss)+"/lobsterin", cats, frame, auto=True, lower=1.8, higher=4.2)
+
+########################################################################################################
+########################################################################################################
+########################################################################################################
+########################################################################################################
+########################################################################################################
+"""
+    # Next for each element
+    # Zr
+    soapsl = soaplist.SOAPList(xyz_file, verb = True)
+    soapsl.compute_per_atom(cutoff = "3.75", 
+                      l_max = "6", 
+                      n_max = "8", 
+                      n_Z = "1", 
+                      Z = "{40}", 
+                      n_species = "3", 
+                      species_Z = "{13 29 40}")
+    soaps, cats, frame = soapsl.get_pasoaps(0,0)
+    # Writing the lobsterin file and getting the 
+    write_lobsterin(jobdir+"/"+str(iss)+"/lobsterin-quippy-Zr", cats, frame)
+    # dumping the soap vectors in a hash table with the 
+    # id of the central atom in the system's .xyz file
+    # as the key == [str(cats[i][0] + 1)]
+    soapsht = {}
+    for icat in range(len(cats)):
+        soapsht[str(cats[icat][0] + 1)] = soaps[icat]
+    dump_soaps(soapsdir+"/"+str(iss)+"/SOAPS-Zr.vec", soapsht)
+    # Cu
+    soapsl = soaplist.SOAPList(xyz_file, verb = True)
+    soapsl.compute_per_atom(cutoff = "3.75", 
+                      l_max = "6", 
+                      n_max = "8", 
+                      n_Z = "1", 
+                      Z = "{29}", 
+                      n_species = "3", 
+                      species_Z = "{13 29 40}")
+    soaps, cats, frame = soapsl.get_pasoaps(0,0)
+    # Writing the lobsterin file
+    write_lobsterin(jobdir+"/"+str(iss)+"/lobsterin-quippy-Cu", cats, frame)
+    # dumping the soap vectors in a hash table with the 
+    # id of the central atom in the system's .xyz file
+    # as the key == [str(cats[i][0] + 1)]
+    soapsht = {}
+    for icat in range(len(cats)):
+        soapsht[str(cats[icat][0] + 1)] = soaps[icat]
+    dump_soaps(soapsdir+"/"+str(iss)+"/SOAPS-Cu.vec", soapsht)
+    # Al
+    soapsl = soaplist.SOAPList(xyz_file, verb = True)
+    soapsl.compute_per_atom(cutoff = "3.75", 
+                      l_max = "6", 
+                      n_max = "8", 
+                      n_Z = "1", 
+                      Z = "{13}", 
+                      n_species = "3", 
+                      species_Z = "{13 29 40}")
+    soaps, cats, frame = soapsl.get_pasoaps(0,0)
+    # Writing the lobsterin file
+    write_lobsterin(jobdir+"/"+str(iss)+"/lobsterin-quippy-Al", cats, frame)
+    # dumping the soap vectors in a hash table with the 
+    # id of the central atom in the system's .xyz file
+    # as the key == [str(cats[i][0] + 1)]
+    soapsht = {}
+    for icat in range(len(cats)):
+        soapsht[str(cats[icat][0] + 1)] = soaps[icat]
+    dump_soaps(soapsdir+"/"+str(iss)+"/SOAPS-Al.vec", soapsht)
+"""
+
