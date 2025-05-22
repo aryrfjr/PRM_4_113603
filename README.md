@@ -10,8 +10,8 @@ Below a description of the directories in this root folder:
 
 - **data_examples**: this folder contains samples of the data generated for the nominal composition Zr₄₉Cu₄₉Al₂.
 
-- **atomistic_models**: this folder contains simulation-specific model inputs used for the generation of **automated/reproducible synthetic training raw data** from atomistic simulations using LAMMPS (a classical molecular dynamics simulator) and Quantum ESPRESSO (a first-principles electronic structure code based on density functional theory, DFT). These models inputs are EAM potentials and pseudopotentials.
+- **atomistic_models**: this folder contains simulation-specific model inputs used for the generation of **automated/reproducible synthetic training raw data** from atomistic simulations using LAMMPS (a classical molecular dynamics simulator) and Quantum ESPRESSO (a first-principles electronic structure code based on density functional theory, DFT). These models inputs are the EAM potentials and the pseudopotentials used in the simulations.
 
 - **img**: this folder contains some figures used in the README files of this repository.
 
-**NOTE**: Under each one of the directories above, the original folder structure used to produce the results reported in **Phys. Rev. Materials 4, 113603** are replicated. The two root folders **ML** and **SS-ML** (and its subfolders) are the same as those used in the original Python/Shell-based GETL pipelines depicted in the figure above.
+**NOTE**: Under each one of the directories above, the original subfolder structure used to produce the results reported in **Phys. Rev. Materials 4, 113603** are replicated. The structure of the two root folders **ML** and **SS-ML** are the same as those used in the original Python/Shell-based GETL pipelines depicted in the figure above.
