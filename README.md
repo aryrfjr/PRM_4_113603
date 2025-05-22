@@ -14,6 +14,10 @@ Below a description of the directories in this root folder:
 
 - **img**: this folder contains some figures used in the README files of this repository.
 
-**NOTE**: The immediate subfolders of **scripts** and **data_examples** correspond to each step/phase illustrated in the figure above: **Generate** (**DataOps phase**), **ETL model** (**ModelOps phase**), **Train/Tune** (**observability** or **model evaluation** in the **ModelOps phase**), and **Deployment/Production**.
+**NOTE**: The immediate subfolders of **scripts** and **data_examples** correspond to each step/phase illustrated in the figure above:
+- **Generate** (**DataOps phase**).
+- **ETL model** (**ModelOps phase**).
+- **Train/Tune** (**observability** or **model evaluation** in the **ModelOps phase**).
+- **Deployment/Production**.
 
 **NOTE**: Under each one of the directories above, the original subfolder structure used to produce the results reported in **Phys. Rev. Materials 4, 113603** are replicated. The structure of the two root folders **ML** and **SS-ML** are the same as those used in the original Python/Shell-based GETL pipelines depicted in the figure above.
