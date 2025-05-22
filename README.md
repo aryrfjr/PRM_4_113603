@@ -4,13 +4,65 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 ![MLOPs workflow used in PRM_4_113603](img/PRM_4_113603_MLOps.drawio.png)
 
-Below a description of the directories in this root folder:
+⚠️ **IMPORTANT:** The results were not obtained following industry MLOps practices, since I was working solo and under constrained local computing conditions. Although I had access to the SDumont supercomputer (HPC), the service was not cloud-native. This meant there was no possibility of using modern workflows such as REST API calls to submit jobs or retrieve results. Consequently, there was no support for automation practices like CI/CD, workflow orchestration, or programmatic job management. All processes for data generation, model training/monitoring, and deployment were manual.
+
+## 🧪 1. Problem Definition & Domain Context
+
+- **Goal**: Predict chemical **bond strengths** (-ICOHP values) in metallic glasses at density functional theory (DFT)-level accuracy.
+
+  - 📝 **NOTE**: Within the context of Computational Chemistry, the "integrated COHP (the -ICOHP value) hints towards the **bond strength**"; COHP stands for ([Crystal Orbital Hamilton Populations](https://schmeling.ac.rwth-aachen.de/cohp/index.php?menuID=1)).
+
+- **Challenge**: Direct DFT computation is computationally infeasible for large-scale (e.g. 10k-atom) systems, whose atomic level whole structure is more realistic.
+
+## 🧩 2. Data Generation & Labeling (DataOps phase)
+
+- **Raw Data Sources**:
+
+  - Classical Molecular Dynamics (CMD) simulations are used to to generate an ensemble smaller systems (100-atom cells) whose atomic level local environments are representative of those found on large-scale systems.
+
+  - Feasible first-principles electronic structure simulations based on DFT to compute -ICOHP values (**labels**) for the smaller systems.
+
+- **Data Engineering**:
+
+  - Convert atomic configurations (local environment around central atoms in terms of its neighbours; or simply **local atomic fingerprints**) to SOAP descriptors (**feature engineering**).
+ 
+    - 📝 **NOTE**: Within the context of Computational Chemistry/Materials Science, SOAP stands for ([Smooth Overlap of Atomic Positions](https://doi.org/10.1103/PhysRevB.87.184115)).
+
+  - Database of interactions (DBIs) includes **bond distance**, **bond strengths**, and **local atomic fingerprints**.
+  
+- **Labeling Strategy**:
+
+  - -ICOHP values calculated via DFT and COHP analysis are used as **supervised labels**.
+ 
+## 🛠️ 3. Model Development (ModelOps phase)
+
+- **ML Approach**: Gaussian Process Regression (GPR)
+
+- **Feature Inputs**:
+
+  - SOAP vectors for atoms in bonds.
+
+  - Bond distances.
+
+- **Custom Kernel Function**:
+
+  - Designed to combine bond distance and SOAP similarity.
+
+- **Output**: Predicted -ICOHP value (bond strength).
+
+- **Evaluation**:
+
+  - Root Mean Square Error (RMSE) on test data per bond type.
+
+  - Robust performance demonstrated with small training sets.
+
+## 📌 Description of the directories in this root folder:
 
 - [**scripts**](https://github.com/aryrfjr/PRM_4_113603/tree/main/scripts): this folder contains the essential Python and Bash scripts which make up the implemented MLOps workflow used in that work. The scripts were used at different stages of the research (tests, development, and application) and are operational at a high technical level manual execution of the Python/Shell-based GETL pipelines depicted in the figure above.
 
 - [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples): this folder contains samples of the data generated for the nominal composition Zr₄₉Cu₄₉Al₂.
 
-- [**atomistic_models**](https://github.com/aryrfjr/PRM_4_113603/tree/main/atomistic_models): this folder contains simulation-specific model inputs used for the generation of **automated/reproducible synthetic training raw data** from atomistic simulations using LAMMPS (a classical molecular dynamics simulator) and Quantum ESPRESSO (a first-principles electronic structure code based on density functional theory, DFT). These models inputs are the EAM potentials and the pseudopotentials used in the simulations.
+- [**atomistic_models**](https://github.com/aryrfjr/PRM_4_113603/tree/main/atomistic_models): this folder contains simulation-specific model inputs used for the generation of **automated/reproducible synthetic training raw data** from atomistic simulations using LAMMPS (a CMD simulator) and Quantum ESPRESSO (a first-principles electronic structure code based on density functional theory, DFT). These models inputs are the EAM potentials and the pseudopotentials used in the simulations.
 
 - [**img**](https://github.com/aryrfjr/PRM_4_113603/tree/main/img): this folder contains some figures used in the README files of this repository.
 
