@@ -6,13 +6,13 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 Below a description of the directories in this root folder:
 
-- **scripts**: this folder contains the essential Python and Bash scripts which make up the implemented MLOps workflow used in that work. The scripts were used at different stages of the research (tests, development, and application) and are operational at a high technical level manual execution of the Python/Shell-based GETL pipelines depicted in the figure above.
+- [**scripts**](https://github.com/aryrfjr/PRM_4_113603/tree/main/scripts): this folder contains the essential Python and Bash scripts which make up the implemented MLOps workflow used in that work. The scripts were used at different stages of the research (tests, development, and application) and are operational at a high technical level manual execution of the Python/Shell-based GETL pipelines depicted in the figure above.
 
-- **data_examples**: this folder contains samples of the data generated for the nominal composition Zr₄₉Cu₄₉Al₂.
+- [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples): this folder contains samples of the data generated for the nominal composition Zr₄₉Cu₄₉Al₂.
 
-- **atomistic_models**: this folder contains simulation-specific model inputs used for the generation of **automated/reproducible synthetic training raw data** from atomistic simulations using LAMMPS (a classical molecular dynamics simulator) and Quantum ESPRESSO (a first-principles electronic structure code based on density functional theory, DFT). These models inputs are the EAM potentials and the pseudopotentials used in the simulations.
+- [**atomistic_models**](https://github.com/aryrfjr/PRM_4_113603/tree/main/atomistic_models): this folder contains simulation-specific model inputs used for the generation of **automated/reproducible synthetic training raw data** from atomistic simulations using LAMMPS (a classical molecular dynamics simulator) and Quantum ESPRESSO (a first-principles electronic structure code based on density functional theory, DFT). These models inputs are the EAM potentials and the pseudopotentials used in the simulations.
 
-- **img**: this folder contains some figures used in the README files of this repository.
+- [**img**](https://github.com/aryrfjr/PRM_4_113603/tree/main/img): this folder contains some figures used in the README files of this repository.
 
 **NOTE**: The immediate subfolders of **scripts** and **data_examples** correspond to each step/phase illustrated in the figure above:
 - **Generate** (**DataOps phase**).
