@@ -8,7 +8,7 @@ Below a description of the directories in this folder in the order they are used
 
 ## Generate (DataOps phase)
 
-The original folder structure of the **raw data sources** generated using CMD simulations is
+📝 **NOTE**: The original folder structure of the **raw data sources** generated using CMD simulations is
 
 **ML/big-data-full/\<NC>/c/md/lammps/100/<ID_RUN>/2000/<SUB_RUN>/**; with:
 
@@ -48,7 +48,7 @@ The original folder structure of the **raw data sources** generated using CMD si
  
      - 💾 [**SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2-SOAPS/c/md/lammps/100/21/2000/0/SOAPS.vec): a file with the per-atom SOAPs and the respective central atoms indexes.
     
-       - ⚠️ **NOTE:** saved in **ML/big-data-full/\<NC>-SOAPS/c/md/lammps/100/<ID_RUN>/2000/<SUB_RUN>/**.
+       - ⚠️ **NOTE**: saved in **ML/big-data-full/\<NC>-SOAPS/c/md/lammps/100/<ID_RUN>/2000/<SUB_RUN>/**.
     
 - 📄 [**G/ML/big-data-full/zca-QE-SD_cpu.sh**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/G/ML/big-data-full/zca-QE-SD_cpu.sh): this script simply runs Quantum ESPRESSO, what will result in the following files for each **<SUB_RUN>**:
 
@@ -68,7 +68,7 @@ The original folder structure of the **raw data sources** generated using CMD si
 
 ## ETL model (ModelOps phase)
 
-📝 **NOTE:**: At this point we have **automated/reproducible generated raw data** from atomistic simulations with DFT (the **bond strengths**; the **target variable** for the **ML model**) and **feature engineering** generated with quippy (the SOAP descriptors; the **feature vectors** for the **ML model**).
+📝 **NOTE**: At this point we have **automated/reproducible generated raw data** from atomistic simulations with DFT (the **bond strengths**; the **target variable** for the **ML model**) and **feature engineering** generated with quippy (the SOAP descriptors; the **feature vectors** for the **ML model**).
 
 - 📄 [**ETL_model/ML/big-data-full/scripts/create_SSDB.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/ETL_model/ML/big-data-full/scripts/create_SSDB.py): when executed in **per-bond** database mode (PB) for a given **\<NC>** it will:
 
