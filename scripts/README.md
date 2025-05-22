@@ -18,6 +18,8 @@ Below a description of the directories in this folder in the order they are used
 
 - **<SUB_RUN>**: an execution of the DFT simulations for the corresponding 100-atom cell generated with the CMD simulation (the reference structure for a specific **<ID_RUN>**). The structure used in sub-run **0** is exactly the same reference structure, whereas the remaining sub-runs (from **1** to **14**) are those derived from geometric transformations (shear, tension, compression) applied to the reference structure for **data augmentation**.
 
+Next, a description of each script:
+
 - 📄 [**G/ML/big-data-full/zca-bd-full-SD-cpu.sh**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/G/ML/big-data-full/zca-bd-full-SD-cpu.sh): this script has no input files and it creates the run (**<ID_RUN>**) directories. For each **<ID_RUN>**, the script also creates the input file for the classical molecular dynamics (CMD) simulation using LAMMPS and then runs it. The outputs of that simulation are written to that same **<ID_RUN>** directory. The full set of files generated is:
   
   - 💾 [**Zr49Cu49Al2.lmp.inp**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/Zr49Cu49Al2.lmp.inp): LAMMPS input file with 100-atom cells and instruction to generate random atomic coordinates when the CMD simulation starts.
