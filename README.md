@@ -6,7 +6,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 ⚠️ **IMPORTANT:** The results were not obtained following industry MLOps practices, since I was working solo and under constrained local computing conditions. Although I had access to the SDumont supercomputer (HPC), the service was not cloud-native. This meant there was no possibility of using modern workflows such as REST API calls to submit jobs or retrieve results. Consequently, there was no support for automation practices like CI/CD, workflow orchestration, or programmatic job management. All processes for data generation, model training/monitoring, and deployment were manual.
 
-📝 **NOTE:** Regarding code quality and best practices, I started a refactoring work once and extracted some features into a separate and reusable library: [theo4m](https://github.com/aryrfjr/theo4m). The Python scripts in the folder 🗂️ [**scripts**](https://github.com/aryrfjr/PRM_4_113603/tree/main/scripts) use that library.
+📝 **NOTE:** Regarding code quality and best practices, I started a refactoring work once and extracted some features into a separate and reusable library named 📦 [theo4m](https://github.com/aryrfjr/theo4m), which is used in the Python scripts in the folder 🗂️ [**scripts**](https://github.com/aryrfjr/PRM_4_113603/tree/main/scripts).
 
 ## 🧪 1. Problem Definition & Domain Context
 
