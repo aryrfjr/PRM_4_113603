@@ -4,7 +4,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 ![MLOPs workflow used in PRM_4_113603](img/PRM_4_113603_MLOps.drawio.png)
 
-⚠️ **IMPORTANT:** The results were not obtained following industry MLOps practices, since I was working solo and under constrained local computing conditions. Although I had access to the SDumont supercomputer (HPC), the service was not cloud-native. This meant there was no possibility of using modern workflows such as REST API calls to submit jobs or retrieve results. Consequently, there was no support for automation practices like CI/CD, workflow orchestration, or programmatic job management. All processes for data generation, model training/monitoring, and deployment were manual.
+⚠️ **NOTE:** The results were not obtained following industry MLOps practices, since I was working solo and under constrained local computing conditions. Although I had access to the SDumont supercomputer (HPC), the service was not cloud-native. This meant there was no possibility of using modern workflows such as REST API calls to submit jobs or retrieve results. Consequently, there was no support for automation practices like CI/CD, workflow orchestration, or programmatic job management. All processes for data generation, model training/monitoring, and deployment were manual.
 
 📝 **NOTE:** Regarding code quality and best practices, I started a refactoring work once and extracted some features into a separate and reusable library named 📦 [theo4m](https://github.com/aryrfjr/theo4m), which is used in the Python scripts in the folder 🗂️ [**scripts**](https://github.com/aryrfjr/PRM_4_113603/tree/main/scripts).
 
@@ -64,7 +64,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 ## 📌 Description of the directories in this root folder:
 
-- 🗂️ [**scripts**](https://github.com/aryrfjr/PRM_4_113603/tree/main/scripts): this folder contains the essential Python and Bash scripts which make up the implemented MLOps workflow used in that work. The scripts were used at different stages of the research (tests, development, and application) and are operational at a high technical level manual execution of the Python/Shell-based GETL pipelines depicted in the figure above.
+- 🗂️ [**scripts**](https://github.com/aryrfjr/PRM_4_113603/tree/main/scripts): this folder contains the essential Python and Bash scripts which make up the implemented MLOps workflow used in that work. The scripts were used at different stages of the research (tests, development, and application) and are operational at a high technical level manual execution of the Python/Shell-based GETL pipelines depicted in the diagram above.
 
 - 🗂️ [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples): this folder contains samples of the data generated for the nominal composition Zr₄₉Cu₄₉Al₂.
 
@@ -72,7 +72,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 - 🗂️ [**img**](https://github.com/aryrfjr/PRM_4_113603/tree/main/img): this folder contains some figures used in the README files of this repository.
 
-📝 **NOTE**: The immediate subfolders of **scripts** and **data_examples** correspond to each step/phase illustrated in the figure above:
+📝 **NOTE**: The immediate subfolders of **scripts** and **data_examples** correspond to each step/phase illustrated in the diagram above:
 
 - **Generate** (**DataOps phase**).
   
@@ -82,4 +82,4 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
   
 - **ETL inference** (after **Deployment/Production**).
 
-📝 **NOTE**: Under each one of the directories above, the original subfolder structure used to produce the results reported in **Phys. Rev. Materials 4, 113603** are replicated. The structure of the two root folders **ML** and **SS-ML** are the same as those used in the original Python/Shell-based GETL pipelines depicted in the figure above.
+⚠️ **NOTE**: Under each one of the directories above, the original subfolder structure used to produce the results reported in **Phys. Rev. Materials 4, 113603** are replicated. The structure of the two root folders **ML** and **SS-ML** are the same as those used in the original Python/Shell-based GETL pipelines depicted in the diagram above.
