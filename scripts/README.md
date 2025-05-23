@@ -8,13 +8,13 @@ Below a description of the directories in this folder in the order they are used
 
 ## Generate (DataOps phase)
 
-📝 **NOTE**: The original folder structure of the **raw data sources** generated using CMD simulations is
+The original folder structure of the **raw data sources** generated using CMD simulations is:
 
 **ML/big-data-full/\<NC>/c/md/lammps/100/<ID_RUN>/2000/<SUB_RUN>/**; with:
 
-- **\<NC>**: a nominal composition (NC) of the metallic glass. All files in the folder 🗂️ [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples) are for the NC Zr₄₉Cu₄₉Al₂.
+- **\<NC>**: a nominal composition (NC) of the metallic glass. Almost all files in the folder 🗂️ [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples) are for the NC Zr₄₉Cu₄₉Al₂.
   
-- **<ID_RUN>**: an independent CMD simulation configured to start with a random distribution of 100 atoms in a cubic cell. All files in the folder 🗂️ [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples) are for run **21** of the NC Zr₄₉Cu₄₉Al₂.
+- **<ID_RUN>**: an independent CMD simulation configured to start with a random distribution of 100 atoms in a cubic cell. Almost all files in the folder 🗂️ [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples) are for run **21** of the NC Zr₄₉Cu₄₉Al₂.
 
 - **<SUB_RUN>**: an execution of the DFT simulations for the corresponding 100-atom cell generated with the CMD simulation (the reference structure for a specific **<ID_RUN>**). The structure used in sub-run **0** is exactly the same reference structure, whereas the remaining sub-runs (from **1** to **14**) are those derived from geometric transformations (shear, tension, compression) applied to the reference structure for **data augmentation**.
 
