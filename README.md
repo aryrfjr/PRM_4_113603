@@ -62,7 +62,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 - 💡 **NOTE**: Maybe a Generative AI (GenAI) based approach could be used to generate the initial ensembles of smaller systems (100-atom cells) or for **data augmentation**.
 
-## 📌 Description of the directories in this root folder:
+## 📌 Directories in this Root Folder:
 
 - 🗂️ [**scripts**](https://github.com/aryrfjr/PRM_4_113603/tree/main/scripts): this folder contains the essential Python and Bash scripts which make up the implemented MLOps workflow used in that work. The scripts were used at different stages of the research (tests, development, and application) and are operational at a high technical level manual execution of the Python/Shell-based GETL pipelines depicted in the diagram above.
 
