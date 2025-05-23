@@ -122,7 +122,7 @@ The goal of the next step is to bring **transferability** and **model generaliza
    
     - 📥 [**SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al-SOAPS.vec): the SOAP vectors for atoms in bonds (the additional **feature input**).
    
-  - if, for instance, the scripts runs with the NC set to **Zr49Cu49Al2**, the **interaction type** set to **Zr-Cu**, the **kernel dimension** set to **2000**, the **zeta hyperparameter** set to **1.0**, the **sigma hyperparameter** set to **1.0**, the **additional hyperparameter parameter** (see **Phys. Rev. Materials 4, 113603**) set to **0.04**, and the **training set** size set to **1000**, the following files will be generated:
+  - if, for instance, the scripts runs with the NC set to **Zr49Cu49Al2**, the **interaction type** set to **Zr-Cu**, the **kernel dimension** set to **2000**, the **zeta hyperparameter** set to **1.0**, the **sigma hyperparameter** set to **1.0**, the **additional hyperparameter** (see **Phys. Rev. Materials 4, 113603**) set to **0.04**, and the **training set** size set to **1000**, the following files will be generated:
  
     - 💾 [**Zr49Cu49Al2-Zr-Cu-2000-1.0-1.0-0.04-1000.dat**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/TT/ML/big-data-full/scripts/Zr49Cu49Al2_ultimate/Zr49Cu49Al2-Zr-Cu-2000-1.0-1.0-0.04-1000.dat): a two columns file with the predicted -ICOHP value from the ML model versus the actual value from DFT electronic structure simulation.
    
