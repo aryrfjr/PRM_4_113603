@@ -38,7 +38,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 ## 🛠️ 3. Model Development (ModelOps phase)
 
-- **Machine Learning (ML) Approach**: Gaussian Process Regression (GPR)
+- **Machine Learning (ML) Approach**: Gaussian Process Regression (GPR).
 
 - **Feature Inputs**:
 
