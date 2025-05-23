@@ -1,0 +1,62 @@
+# General setup
+units metal
+boundary p p p
+atom_style atomic
+
+# Initial random distribution of 100 atoms
+region box block -6.98 6.98 -6.98 6.98 -6.98 6.98 
+create_box 3 box
+create_atoms 1 random 45 12135 NULL units box # Zr
+create_atoms 2 random 45 28701 NULL units box # Cu
+create_atoms 3 random 10 72325 NULL units box # Al
+
+# The EAM potential
+pair_style eam/alloy
+# For all pairs of atom types (* *), reads the EAM potential file 
+# ZrCuAl.eam.alloy. See more at
+# http://lammps.sandia.gov/doc/pair_eam.html
+# Note: the masses and the cutoffs are already specified in the EAM 
+#       potential file.
+# Note: the EAM file above is in the DYNAMO multi-element setfl format.
+# Note: the elements in the EAM file are mapped to LAMMPS atom types 
+#       specified with the create_atoms command above by specifying N 
+#       additional arguments after the filename.
+pair_coeff * * ZrCuAl-2011.lammps.eam Zr Cu Al
+
+# Summary of thermodynamic info
+thermo 50
+thermo_style custom step etotal temp press pe vol density lx ly lz enthalpy
+
+# CG minimization at constant volume
+# just to avoid overlapping of atoms
+min_style cg # Conjugate gradient
+minimize 0.0 1.0e-8 10000 10000
+
+# Now trying to reach a liquid in thermal
+# equilibrium at 2000 K.
+# See more on 03/11/2016-(10).
+fix th all npt temp 2000 2000 0.2 iso 0 0 2
+# A time step of 2 fs.
+timestep 0.002
+thermo 5000
+run 1000000
+unfix th
+
+#
+# Now the quenching at 8.5e9 K/s from 2000 K to 300 K
+#
+fix thq all npt temp 2000 300 0.2 iso 0 0 2
+thermo 50000
+run 100000000
+unfix thq
+
+#
+# Now the second thermalization at 300 K
+#
+fix th300 all npt temp 300 300 0.2 iso 0 0 2
+dump zca-th300 all atom 500 zca-th300.dump
+thermo 5000
+run 1000000
+write_restart zca-th300.restart
+unfix th300
+undump zca-th300
