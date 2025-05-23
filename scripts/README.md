@@ -86,7 +86,7 @@ At this point the **Generate (DataOps phase)** is finished and the **ETL model (
    
   - write to a **per-bond single SOAP database** (PBSSDB) directory **ML/big-data-full/\<NC>-PBSSDB** files for all possible **bond-types SA-SB** (with **SA/SB** as Zr, Al, Cu):
  
-    - 💾 [**SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al.bnd): the result of the **labeling process**, with bonds distances and -ICOHP values (**supervised labels**). This output file header structure is composed by the columns **<RUN>**, **<SUB_RUN>**, **<ATOMA_IDX>**, **<ATOMB_IDX>**, **<BOND_DISTANCE>**, and **<BOND_ICOHP>**.
+    - 💾 [**SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al.bnd): the result of the **labeling process**, with bonds distances and -ICOHP values (**supervised labels**). This output file header structure is composed by the columns **<RUN>**, **<SUB_RUN>**, **<ATOMA_IDX>**, **<ATOMB_IDX>**, **<BOND_DISTANCE>**, and **<BOND_ICOHP>**.<a name="Zr49Cu49Al2-PBSSDB-Al-Al.bnd"></a>
    
     - 💾 [**SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al-SOAPS.vec): the SOAP vectors for atoms in bonds (the additional **feature input**).
    
@@ -138,7 +138,7 @@ The goal of the next step is to bring **transferability** and **model generaliza
 
     - 📥 [**DB4_SA-SB.info**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al.info): an information file with the **mixed database** name, its **bond type**, and the number of bonds from each NC.
    
-    - 📥 [**DB4_SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al.bnd): a file with the same structure of a per-NC file from a PBSSDB like 📥 [**SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al.bnd).
+    - 📥 [**DB4_SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al.bnd): a file with the same structure of a per-NC file from a PBSSDB like 📥 [**SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al.bnd). [test](#Zr49Cu49Al2-PBSSDB-Al-Al.bnd)
    
     - 📥 [**DB4_SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al-SOAPS.vec): a file with the same structure of a per-NC file from a PBSSDB like 📥 [**SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al-SOAPS.vec).
 
