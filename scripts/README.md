@@ -132,7 +132,15 @@ The goal of the next step is to bring **transferability** and **model generaliza
    
       - 📈 The example of **.png** file described above is: ![example_TT_RMS_png](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/TT/ML/big-data-full/scripts/Zr49Cu49Al2_ultimate/Zr49Cu49Al2-Zr-Cu-2000-1.0-1.0-0.04-1000.png)
  
-- 📄 [**TT/SS-ML/scripts/ML-ICOHP_RMSD.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/TT/SS-ML/scripts/ML-ICOHP_RMSD.py): Next, the script ML-ICOHP_RMSD.py, performs a similar test to PBSSDB-kernel_fit.py, but the testing set are bonds loaded from a 100-atoms cell created in the Generate step.
+- 📄 [**TT/SS-ML/scripts/ML-ICOHP_RMSD.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/TT/SS-ML/scripts/ML-ICOHP_RMSD.py): this script will perform validation in the same scenario of **Production**. The **training set** is loaded from a **mixed database**, whereas the **testing set** is loaded from a 100-atom cell for which we have the **target -ICOHP values** (calculated with DFT). The script will:
+
+  - read the **mixed database** (for instance named as [**DB4**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples/ETL_model/ML/big-data-full/DB4)) generated with the script 📄 [**ETL_model/ML/big-data-full/scripts/mix_SSDBs.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/ETL_model/ML/big-data-full/scripts/mix_SSDBs.py) as per description above, whose files to be loaded are:
+
+    - 📥 [**DB4_SA-SB.info**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al.info): an information file with the **mixed database** name, its **bond type**, and the number of bonds from each NC.
+   
+    - 📥 [**DB4_SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al.bnd): a file with the same structure of a per-NC file from a PBSSDB like 📥 [**SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al.bnd).
+   
+    - 📥 [**DB4_SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al-SOAPS.vec): a file with the same structure of a per-NC file from a PBSSDB like 📥 [**SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al-SOAPS.vec).
 
 ## ETL inference (after Deployment/Production)
 
