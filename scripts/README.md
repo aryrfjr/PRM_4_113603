@@ -40,7 +40,7 @@ Next, a description of each script in the **Generate** step:
     
      - 💾 [**Zr49Cu49Al2-check.scf.in**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/2000/0/Zr49Cu49Al2-check.scf.in): same content of 💾 [**Zr49Cu49Al2.scf.in**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/2000/0/Zr49Cu49Al2.scf.in), but it was used just to test a specific input variable of QE.
     
-     - 💾 [**Zr49Cu49Al2.xyz**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/2000/0/Zr49Cu49Al2.xyz): just the same atomic positions and cell vectors from the loaded file 📥 [**zca-th300.dump**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/zca-th300.dump) above.
+     - 💾 [**Zr49Cu49Al2.xyz**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/2000/0/Zr49Cu49Al2.xyz): just the same atomic positions and cell vectors from the loaded file 📥 [**zca-th300.dump**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/zca-th300.dump) above if **<SUB_RUN>** is **0** (the reference structure). If **<SUB_RUN>** is between **1** to **14**, then the file contains one of those structures derived from geometric transformations (shear, tension, compression) applied to the reference structure for **data augmentation**.
     
      - 💾 [**lobsterin**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/2000/0/lobsterin): a LOBSTER input file with automatic detection of bonds.
     
@@ -86,7 +86,7 @@ At this point the **Generate (DataOps phase)** is finished and the **ETL model (
    
   - write to a **per-bond single SOAP database** (PBSSDB) directory **ML/big-data-full/\<NC>-PBSSDB** files for all possible **bond-types SA-SB** (with **SA/SB** as Zr, Al, Cu):
  
-    - 💾 [**SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al.bnd): the result of the **labeling process**, with bonds distances and -ICOHP values (**supervised labels**). This output file header structure is composed by the columns **<RUN>**, **<SUB_RUN>**, **<ATOMA_IDX>**, **<ATOMB_IDX>**, **<BOND_DISTANCE>**, and **<BOND_ICOHP>**.<a name="Zr49Cu49Al2-PBSSDB-Al-Al.bnd"></a>
+    - 💾 [**SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al.bnd): the result of the **labeling process**, with bonds distances and -ICOHP values (**supervised labels**). This output file header structure is composed by the columns **<RUN>**, **<SUB_RUN>**, **<ATOMA_IDX>**, **<ATOMB_IDX>**, **<BOND_DISTANCE>**, and **<BOND_ICOHP>**.
    
     - 💾 [**SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al-SOAPS.vec): the SOAP vectors for atoms in bonds (the additional **feature input**).
    
@@ -132,15 +132,19 @@ The goal of the next step is to bring **transferability** and **model generaliza
    
       - 📈 The example of **.png** file described above is: ![example_TT_RMS_png](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/TT/ML/big-data-full/scripts/Zr49Cu49Al2_ultimate/Zr49Cu49Al2-Zr-Cu-2000-1.0-1.0-0.04-1000.png)
  
-- 📄 [**TT/SS-ML/scripts/ML-ICOHP_RMSD.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/TT/SS-ML/scripts/ML-ICOHP_RMSD.py): this script will perform validation in the same scenario of **Production**. The **training set** is loaded from a **mixed database**, whereas the **testing set** is loaded from a 100-atom cell for which we have the **target -ICOHP values** (calculated with DFT). The script will:
+- 📄 [**TT/SS-ML/scripts/ML-ICOHP_RMSD.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/TT/SS-ML/scripts/ML-ICOHP_RMSD.py): this script will perform validation in the same scenario of **Production**. The **training set** is loaded from a **mixed database**, whereas the **testing set** is loaded from a 100-atom cell of a specific NC (Zr₄5Cu₄5Al₁₀ in the file examples below; with **<ID_RUN**> set to **1**) for which we have the **target -ICOHP values** (calculated with DFT). The script will:
 
   - read the **mixed database** (for instance named as [**DB4**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples/ETL_model/ML/big-data-full/DB4)) generated with the script 📄 [**ETL_model/ML/big-data-full/scripts/mix_SSDBs.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/ETL_model/ML/big-data-full/scripts/mix_SSDBs.py) as per description above, whose files to be loaded are:
 
     - 📥 [**DB4_SA-SB.info**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al.info): an information file with the **mixed database** name, its **bond type**, and the number of bonds from each NC.
    
-    - 📥 [**DB4_SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al.bnd): a file with the same structure of a per-NC file from a PBSSDB like 📥 [**SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al.bnd). [test](#Zr49Cu49Al2-PBSSDB-Al-Al.bnd)
+    - 📥 [**DB4_SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al.bnd): a file with bonds distances and -ICOHP values (**supervised labels**) generated by the script.
    
-    - 📥 [**DB4_SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al-SOAPS.vec): a file with the same structure of a per-NC file from a PBSSDB like 📥 [**SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al-SOAPS.vec).
+    - 📥 [**DB4_SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB4/DB4_Al-Al-SOAPS.vec): a file with the SOAP vectors for atoms in bonds (the additional **feature input**).
+   
+    - 📥 [**zca-th300.dump**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr45Cu45Al10/c/md/lammps/100/1/zca-th300.dump): if the script runs with the **<SUB_RUN>** argument set to **0**, then last time step in this file is read. This file was generated by LAMMPS and contains atomic positions and cell vectors of each time step of the CMD simulation.
+
+    - 📥 [**Zr45Cu45Al10.xyz**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr45Cu45Al10/c/md/lammps/100/1/2000/1/Zr45Cu45Al10.xyz): if the script runs with the **<SUB_RUN>** argument set to a number between **1** to **14**, then this file is read; and it will contain one of those structures derived from geometric transformations (shear, tension, compression) applied to the reference structure for **data augmentation**. This file was created by the script [**G/ML/big-data-full/scripts/setup_ICOHP_jobs.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/G/ML/big-data-full/scripts/setup_ICOHP_jobs.py) in the **Generate** step.
 
 ## ETL inference (after Deployment/Production)
 
