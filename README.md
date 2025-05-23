@@ -83,3 +83,49 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 - **ETL inference** (after **Deployment/Production**).
 
 ⚠️ **NOTE**: Under each one of the directories above, the original subfolder structure used to produce the results reported in **Phys. Rev. Materials 4, 113603** are replicated. The structure of the two root folders **ML** and **SS-ML** are the same as those used in the original Python/Shell-based GETL pipelines depicted in the diagram above.
+
+## 📦 Third-Party Software Used in Atomistic Simulations
+
+### Simulation Software
+
+- **LAMMPS**
+
+  - **Purpose**: Classical Molecular Dynamics (CMD) simulations.
+ 
+  - **Use Case**: Generate 100-atom and 10,000-atom amorphous metallic glass structures.
+ 
+  - **License**: Open-source (GPL).
+ 
+  - **Reference**: Plimpton, J. Comput. Phys. 117, 1 (1995).
+ 
+- **Quantum ESPRESSO (QE)**
+
+  - **Purpose**: Density Functional Theory (DFT) calculations.
+ 
+  - **Use Case**: Compute electronic structures for 100-atom cells to obtain COHP values.
+ 
+  - **License**: Open-source (GPL).
+ 
+  - **Reference**: Giannozzi et al., J. Phys.: Cond. Matter 21, 395502 (2009).
+ 
+- **LOBSTER**
+
+  - **Purpose**: Projected Crystal Orbital Hamilton Population (pCOHP) analysis.
+ 
+  - **Use Case**: Extract bond strength information (–ICOHP) from DFT wavefunctions (QE output).
+ 
+  - **License**: Free for academic use.
+ 
+  - **Reference**: Maintz et al., J. Comput. Chem. 37, 1030 (2016).
+ 
+### Descriptor Calculation
+
+- **QUIP / libAtoms**
+ 
+  - **Purpose**: Calculation of Smooth Overlap of Atomic Positions (SOAP) descriptors.
+ 
+  - **Use Case**: Featurize atomic local environments for machine learning input.
+ 
+  - **License**: Open-source (academic license required for some parts).
+ 
+  - **Reference**: Bartók et al., Phys. Rev. B 87, 184115 (2013).
