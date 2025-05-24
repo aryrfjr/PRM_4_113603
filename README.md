@@ -66,7 +66,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 - 🗂️ [**scripts**](https://github.com/aryrfjr/PRM_4_113603/tree/main/scripts): this folder contains the essential Python and Bash scripts which make up the implemented MLOps workflow used in that work. The scripts were used at different stages of the research (tests, development, and application) and are operational at a high technical level manual execution of the Python/Shell-based GETL pipelines depicted in the diagram above.
 
-- 🗂️ [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples): this folder contains samples of the data generated for the nominal composition Zr₄₉Cu₄₉Al₂.
+- 🗂️ [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples): this folder contains samples of the data generated for the nominal compositions Zr₄₉Cu₄₉Al₂ (majority) and Zr₄5Cu₄5Al₁₀.
 
 - 🗂️ [**atomistic_models**](https://github.com/aryrfjr/PRM_4_113603/tree/main/atomistic_models): this folder contains simulation-specific model inputs used for the generation of **automated/reproducible synthetic training raw data** from atomistic simulations using LAMMPS (a CMD simulator) and Quantum ESPRESSO (a first-principles electronic structure code based on density functional theory, DFT). These models inputs are the EAM potentials and the pseudopotentials used in the simulations.
 
