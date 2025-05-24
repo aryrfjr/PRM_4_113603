@@ -26,12 +26,12 @@ The following files won't go to the GitHub repository because they are too big:
   
 - 162M ETL_model/ML/big-data-full/DB8/DB8_Zr-Zr-SOAPS.vec
 
-- 56M mai 11 00:50 DB4/DB4_Cu-Al-SOAPS.vec
+- 56M mai 11 00:50 ETL_model/ML/big-data-full/DB4/DB4_Cu-Al-SOAPS.vec
 
-- 60M mai 11 00:50 DB4/DB4_Cu-Cu-SOAPS.vec
+- 60M mai 11 00:50 ETL_model/ML/big-data-full/DB4/DB4_Cu-Cu-SOAPS.vec
 
-- 55M mai 11 00:50 DB4/DB4_Zr-Al-SOAPS.vec
+- 55M mai 11 00:50 ETL_model/ML/big-data-full/DB4/DB4_Zr-Al-SOAPS.vec
 
-- 59M mai 11 00:51 DB4/DB4_Zr-Cu-SOAPS.vec
+- 59M mai 11 00:51 ETL_model/ML/big-data-full/DB4/DB4_Zr-Cu-SOAPS.vec
 
-- 57M mai 11 00:51 DB4/DB4_Zr-Zr-SOAPS.vec
+- 57M mai 11 00:51 ETL_model/ML/big-data-full/DB4/DB4_Zr-Zr-SOAPS.vec
