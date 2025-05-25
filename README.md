@@ -20,7 +20,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 - **Raw Data Sources**:
 
-  - Classical Molecular Dynamics (CMD) simulations are used to to generate an ensemble smaller systems (100-atom cells) whose atomic level local environments are representative of those found on large-scale systems.
+  - Classical Molecular Dynamics (CMD) simulations are used to to generate an ensemble of smaller systems (100-atom cells) whose atomic level local environments are representative of those found on large-scale systems.
 
   - Feasible first-principles electronic structure simulations based on DFT to compute -ICOHP values (**labels**) for the smaller systems.
 
