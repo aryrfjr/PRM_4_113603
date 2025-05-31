@@ -44,7 +44,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 - **Feature Inputs**:
 
-  - SOAP vectors for atoms in bonds. (the SOAP descriptor itself is a feature vector; the ***dot product-based SOAP kernel*** measures similarity and can be used to derive a ***metric distance***).
+  - SOAP vectors for atoms in bonds (the SOAP descriptor itself is a feature vector; the ***dot product-based SOAP kernel*** measures similarity and can be used to derive a ***metric distance***).
 
   - Bond distances.
 
