@@ -4,6 +4,8 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 ![MLOPs workflow used in PRM_4_113603](img/PRM_4_113603_MLOps.drawio.png)
 
+🧠 **IMPORTANT**: Note that it was proposed, naturally, a **human-in-the-loop active learning process embedded within a physics-informed MLOps pipeline**.
+
 ⚠️ **NOTE:** The results were not obtained following industry MLOps practices, since I was working solo and under constrained local computing conditions. Although I had access to the SDumont supercomputer (HPC), the service was not cloud-native. This meant there was no possibility of using modern workflows such as REST API calls to submit jobs or retrieve results. Consequently, there was no support for automation practices like CI/CD, workflow orchestration, or programmatic job management. All processes for data generation, model training/monitoring, and deployment were manual.
 
 ⚠️ **NOTE:** Check ongoing work for MLOps modernization of the Generate+ETL (GETL) framework above at:
