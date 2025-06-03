@@ -4,7 +4,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 ![MLOPs workflow used in PRM_4_113603](img/PRM_4_113603_MLOps.drawio.png)
 
-🧠 **IMPORTANT**: Note that it was proposed, naturally, a **human-in-the-loop active learning process embedded within a physics-informed MLOps pipeline**. Data acquisition based on model performance was done by mixing **exploit** (**data augmentation**) and **explore** (restarting the **Pre-Deployment** pipeline and looking for new Classical Molecular Dynamics samples or new Nominal Compositions).
+🧠 **IMPORTANT**: Note that the proposed approach organically matches a **human-in-the-loop active learning process embedded within a physics-informed MLOps pipeline**. Data acquisition based on model performance was done by mixing **exploit** (**data augmentation**) and **explore** (restarting the **Pre-Deployment** pipeline and looking for new Classical Molecular Dynamics samples or new Nominal Compositions).
 
 ⚠️ **NOTE:** The results were not obtained following industry MLOps practices, since I was working solo and under constrained local computing conditions. Although I had access to the [SDumont supercomputer](https://sdumont.lncc.br) (HPC), the service was not cloud-native. This meant there was no possibility of using modern workflows such as REST API calls to submit jobs or retrieve results. Consequently, there was no support for automation practices like CI/CD, workflow orchestration, or programmatic job management. All processes for data generation, model training/monitoring, and deployment were manual.
 
