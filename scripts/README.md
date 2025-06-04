@@ -10,7 +10,7 @@ Below a description of the directories in this folder in the order they are used
 
 The original folder structure of the **raw data sources** generated using classical molecular dynamics (CMD) simulations is:
 
-**ML/big-data-full/\<NC>/c/md/lammps/100/<ID_RUN>/2000/<SUB_RUN>/**; with:
+`ML/big-data-full/\<NC>/c/md/lammps/100/<ID_RUN>/2000/<SUB_RUN>/`; with:
 
 - **\<NC>**: a nominal composition (NC) of the metallic glass. Almost all files in the folder 🗂️ [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples) are for the NC Zr₄₉Cu₄₉Al₂.
   
@@ -54,7 +54,7 @@ Next, a description of each script in the **Generate** step:
  
      - 💾 [**SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2-SOAPS/c/md/lammps/100/21/2000/0/SOAPS.vec): a file with the per-atom SOAPs and the respective central atoms indexes.
     
-       - ⚠️ **NOTE**: saved in **ML/big-data-full/\<NC>-SOAPS/c/md/lammps/100/<ID_RUN>/2000/<SUB_RUN>/**.
+       - ⚠️ **NOTE**: saved in `ML/big-data-full/\<NC>-SOAPS/c/md/lammps/100/<ID_RUN>/2000/<SUB_RUN>/`.
     
 - 📄 [**G/ML/big-data-full/zca-QE-SD_cpu.sh**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/G/ML/big-data-full/zca-QE-SD_cpu.sh): this script simply runs QE, what will result in the following files for each **<SUB_RUN>**:
 
@@ -88,7 +88,7 @@ At this point the **Generate** is finished and the **ETL model** starts. We have
    
     - 📥 [**ICOHPLIST.lobster**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/2000/0/ICOHPLIST.lobster): to load the **bond strengths**.
    
-  - write to a **per-bond single SOAP database** (PBSSDB) directory **ML/big-data-full/\<NC>-PBSSDB** files for all possible **bond-types SA-SB** (with **SA/SB** as Zr, Al, Cu):
+  - write to a **per-bond single SOAP database** (PBSSDB) directory `ML/big-data-full/\<NC>-PBSSDB` files for all possible **bond-types SA-SB** (with **SA/SB** as Zr, Al, Cu):
  
     - 💾 [**SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al.bnd): the result of the **labeling process**, with bonds distances and -ICOHP values (**supervised labels**). This output file header structure is composed by the columns **<RUN>**, **<SUB_RUN>**, **<ATOMA_IDX>**, **<ATOMB_IDX>**, **<BOND_DISTANCE>**, and **<BOND_ICOHP>**.
    
@@ -102,7 +102,7 @@ The goal of the next step is to bring **transferability** and **model generaliza
 
 - 📄 [**ETL_model/ML/big-data-full/scripts/mix_SSDBs.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/ETL_model/ML/big-data-full/scripts/mix_SSDBs.py): this script creates **per-bond type** (two types of atoms **SA-SB**; with **SA/SB** as Zr, Al, Cu) **mixed databases** for a set of NCs with a specific number of bonds (the **training set size** in **Fig. 1** of **Phys. Rev. Materials 4, 113603**). When executed the script will:
 
-  - read from the PBSSDB directories of the selected NCs (**ML/big-data-full/\<NC>-PBSSDB**):
+  - read from the PBSSDB directories of the selected NCs (`ML/big-data-full/\<NC>-PBSSDB`):
  
     - 📥 [**SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al.bnd): the result of the **labeling process**, with bonds distances and -ICOHP values (**supervised labels**). This output file header structure is composed by the columns **<RUN>**, **<SUB_RUN>**, **<ATOMA_IDX>**, **<ATOMB_IDX>**, **<BOND_DISTANCE>**, and **<BOND_ICOHP>**
    
