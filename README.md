@@ -83,9 +83,9 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 📝 **NOTE**: The immediate subfolders of **scripts** and **data_examples** correspond to each step/phase illustrated in the diagram above:
 
-- **Generate** (**DataOps phase**).
+- **Generate** (**DataOps phase**; **exploration**/**exploitation**).
   
-- **ETL model** (**ModelOps phase**).
+- **ETL model** (**DataOps phase**; **Feature Store Lite**).
   
 - **Train/Tune** (**observability** or **model evaluation** in the **ModelOps phase**).
   
