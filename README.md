@@ -38,7 +38,9 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
     - 📝 **NOTE**: Within the context of Computational Chemistry/Materials Science, SOAP stands for ([Smooth Overlap of Atomic Positions](https://doi.org/10.1103/PhysRevB.87.184115)).
 
   - Database of interactions (DBIs) includes **bond distance**, **bond strengths**, and **local atomic fingerprints**.
-  
+
+    - 📝 **NOTE**: In the end, what has been implemented was a **Feature Store Lite**, where each output DBI is the **structured** and **versioned input** to the ML model. 
+
 - **Labeling Strategy**:
 
   - -ICOHP values calculated via DFT and COHP analysis are used as **supervised labels**.
