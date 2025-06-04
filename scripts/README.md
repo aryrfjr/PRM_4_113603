@@ -76,7 +76,7 @@ Next, a description of each script in the **Generate** step:
 
 At this point the **Generate** is finished and the **ETL model** starts. We have **automated/reproducible generated raw data** from atomistic simulations with DFT (the **bond strengths**; the **target variable** for the ML model) and **feature engineering** generated with QUIP (the SOAP descriptors; the **feature vectors** for the ML model). The next step will be the execution of the following script:
 
-- 📄 [**ETL_model/ML/big-data-full/scripts/create_SSDB.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/ETL_model/ML/big-data-full/scripts/create_SSDB.py): when executed in **per-bond** database mode (PB) for a given `<NC>` it will:
+- 📄 [**ETL_model/ML/big-data-full/scripts/create_SSDB.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/ETL_model/ML/big-data-full/scripts/create_SSDB.py): when executed in **per-bond** database mode (PB) for a given NC it will:
 
   - read from all `<ID_RUN>` and `<SUB_RUN>` folders the files:
  
