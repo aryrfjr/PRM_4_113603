@@ -6,7 +6,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 Below a description of the directories in this folder in the order they are used in the MLOps workflow depicted in the diagram above:
 
-## Generate (DataOps phase)
+## Generate (DataOps phase; exploration/exploitation)
 
 The original folder structure of the **raw data sources** generated using CMD simulations is:
 
@@ -68,7 +68,7 @@ Next, a description of each script in the **Generate** step:
  
   - 💾 [**LOB_run**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2/c/md/lammps/100/21/2000/0/LOB_run): the file contains the **<SUB_RUN>** according to the script and it is used as a flag in next steps.
 
-## ETL model (ModelOps phase)
+## ETL model (DataOps phase; Feature Store Lite)
 
 At this point the **Generate (DataOps phase)** is finished and the **ETL model (ModelOps phase)** starts. We have **automated/reproducible generated raw data** from atomistic simulations with DFT (the **bond strengths**; the **target variable** for the ML model) and **feature engineering** generated with QUIP (the SOAP descriptors; the **feature vectors** for the ML model). The next step will be the execution of the following script:
 
@@ -112,7 +112,9 @@ The goal of the next step is to bring **transferability** and **model generaliza
    
     - 💾 [**DB8_SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB8/DB8_Al-Al-SOAPS.vec): a file with the same structure of the per-NC file 📥 [**SA-SB-SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/Zr49Cu49Al2-PBSSDB/Al-Al-SOAPS.vec) from which the corresponding random lines selected for 💾 [**DB8_SA-SB.bnd**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/ETL_model/ML/big-data-full/DB8/DB8_Al-Al.bnd) are picked.
 
-## Train/Tune (observability or model evaluation in the ModelOps phase)
+    - 📝 **NOTE**: In the end, what has been implemented was a **Feature Store Lite**, where each output DBI is the **structured** and **versioned input** to the ML model. 
+
+## Train/Tune (ModelOps phase; observability or model evaluation)
 
 - 📄 [**TT/ML/big-data-full/scripts/PBSSDB-kernel_fit.py**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/TT/ML/big-data-full/scripts/PBSSDB-kernel_fit.py): this script will load both the **training set** and the **testing set** from one or more PBSSDB directories. It can perform a cross-validation in which the training and the testing sets come from different databases or load both sets from a single database. The script will:
 
