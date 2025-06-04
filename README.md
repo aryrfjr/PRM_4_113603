@@ -91,7 +91,7 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
   
 - **ETL inference** (after **Deployment/Production**).
 
-⚠️ **NOTE**: Under each one of the directories above, the original subfolder structure used to produce the results reported in **Phys. Rev. Materials 4, 113603** are replicated. The structure of the two root folders **ML** and **SS-ML** are the same as those used in the original Python/Shell-based GETL pipelines depicted in the diagram above.
+⚠️ **NOTE**: Under each one of the directories above, the original subfolder structure used to produce the results reported in **Phys. Rev. Materials 4, 113603** (DOI: https://doi.org/10.1103/PhysRevMaterials.4.113603; or the [preprint](https://www.researchgate.net/publication/345634787_Chemical_bonding_in_metallic_glasses_from_machine_learning_and_crystal_orbital_Hamilton_population)) are replicated. The structure of the two root folders **ML** and **SS-ML** are the same as those used in the original Python/Shell-based GETL pipelines depicted in the diagram above.
 
 ## 📦 Third-Party Software Used in Atomistic Simulations
 
