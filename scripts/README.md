@@ -15,8 +15,12 @@ The original folder structure of the **raw data sources** generated using CMD si
 - **\<NC>**: a nominal composition (NC) of the metallic glass. Almost all files in the folder 🗂️ [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples) are for the NC Zr₄₉Cu₄₉Al₂.
   
 - **<ID_RUN>**: an independent CMD simulation configured to start with a random distribution of 100 atoms in a cubic cell. Almost all files in the folder 🗂️ [**data_examples**](https://github.com/aryrfjr/PRM_4_113603/tree/main/data_examples) are for run **21** of the NC Zr₄₉Cu₄₉Al₂.
+  
+  - 📝 **NOTE**: The goal here is to allow efficient **exploration** of the configurational space, when the current data coverage isn't enough; it adds new independent structures.
 
 - **<SUB_RUN>**: an execution of the DFT simulations for the corresponding 100-atom cell generated with the CMD simulation (the reference structure for a specific **<ID_RUN>**). The structure used in sub-run **0** is exactly the same reference structure, whereas the remaining sub-runs (from **1** to **14**) are those derived from geometric transformations (shear, tension, compression) applied to the reference structure for **data augmentation**.
+
+  - 📝 **NOTE**: The goal here is to allow efficient **exploitation** of the configurational space, when the structural diversity of current configs needs improvement without running a new CMD simulation.
 
 Next, a description of each script in the **Generate** step:
 
