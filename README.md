@@ -12,6 +12,8 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
 - 🔗 https://github.com/aryrfjr/PRM_4_113603_MLOps.
 
+- 🔗 https://github.com/aryrfjr/PRM_4_113603_MLOps_Java.
+
 📝 **NOTE:** Regarding code quality and best practices, I started a refactoring work once and extracted some features into a separate and reusable library named 📦 [theo4m](https://github.com/aryrfjr/theo4m), which is used in the Python scripts in the folder 🗂️ [**scripts**](https://github.com/aryrfjr/PRM_4_113603/tree/main/scripts).
 
 ## 🧪 1. Problem Definition & Domain Context
