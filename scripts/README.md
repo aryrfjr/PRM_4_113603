@@ -54,7 +54,7 @@ Next, a description of each script in the **Generate** step:
  
      - 💾 [**SOAPS.vec**](https://github.com/aryrfjr/PRM_4_113603/blob/main/data_examples/G/ML/big-data-full/Zr49Cu49Al2-SOAPS/c/md/lammps/100/21/2000/0/SOAPS.vec): a file with the per-atom SOAPs and the respective central atoms indexes.
     
-       - ⚠️ **NOTE**: saved in `ML/big-data-full/<NC>-SOAPS/c/md/lammps/100/<ID_RUN>/2000/<SUB_RUN>/`.
+       - ⚠️ **NOTE**: Actually, this is **Extract** not not **Generate**, and the result is saved in `ML/big-data-full/<NC>-SOAPS/c/md/lammps/100/<ID_RUN>/2000/<SUB_RUN>/`.
     
 - 📄 [**G/ML/big-data-full/zca-QE-SD_cpu.sh**](https://github.com/aryrfjr/PRM_4_113603/blob/main/scripts/G/ML/big-data-full/zca-QE-SD_cpu.sh): this script simply runs QE, what will result in the following files for each `<SUB_RUN>`:
 
