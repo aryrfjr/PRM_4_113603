@@ -54,6 +54,8 @@ Below is an illustration of the MLOps workflow in terms of the Generate+ETL (GET
 
   - SOAP vectors for atoms in bonds (the SOAP descriptor itself is a feature vector; the ***dot product-based SOAP kernel*** measures similarity and can be used to derive a ***metric distance***).
 
+    - 📝 **NOTE**: SOAP vectors are analogous to contextual word embeddings in NLP (Natural Language Processing), such as those produced by BERT (Bidirectional Encoder Representations from Transformers), in that they both encode rich, structured environments into high-dimensional vectors where geometric proximity reflects functional or semantic similarity.
+
   - Bond distances.
 
 - **Custom Kernel Function**:
